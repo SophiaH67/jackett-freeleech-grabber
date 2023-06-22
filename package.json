@@ -11,7 +11,8 @@
     "typescript": "^5.1.3"
   },
   "scripts": {
-    "dev": "nodemon src/main.ts"
+    "dev": "nodemon src/main.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "@ctrl/qbittorrent": "^6.1.0",
