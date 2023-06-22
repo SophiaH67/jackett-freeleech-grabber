@@ -47,11 +47,13 @@ async function main() {
       res.arrayBuffer()
     );
 
-    //@ts-expect-error - Frick you qbit person
-    const success = await qbit.addTorrent(torrentFileContent, {
-      category: "freeleech",
-      useAutoTMM: "true",
-    });
+    const success = await qbit
+      //@ts-expect-error - Frick you qbit person
+      .addTorrent(torrentFileContent, {
+        category: "freeleech",
+        useAutoTMM: "true",
+      })
+      .catch(() => false);
 
     if (!success) console.log("Failed to add torrent", torrent.Title);
   }
